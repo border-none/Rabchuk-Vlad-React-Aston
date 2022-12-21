@@ -83,6 +83,7 @@ class Form extends React.Component {
             <button onClick={this.onClick}>CHANGE</button>
           </form>
           <p> </p>
+          <p>hide without losing state</p>
           <button
             onClick={this.state.mount ? this.unmountForm : this.mountForm}
           >
