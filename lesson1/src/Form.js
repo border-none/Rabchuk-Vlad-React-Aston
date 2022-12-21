@@ -44,28 +44,12 @@ class Form extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log('prevProps =', prevProps);
-    console.log('prevState =', prevState);
-    console.log('Component Did Update 🔁');
+    console.log('Component Form.js Did Update 🔁', 'prevState =', prevState);
   }
 
   componentWillUnmount() {
     console.log('Component Unmounted ❌');
   }
-
-  /*
-  Не рендерить компонент если в userInput есть 2. ((не получилось))
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('Should component update???');
-    console.log(`nextState`, nextState.userInput);
-    console.log('STATE', this.state.userInput);
-    if (this.state.userInput.includes('2')) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-  */
 
   // Mount - unmount methods
   mountForm() {
@@ -82,7 +66,7 @@ class Form extends React.Component {
 
     if (this.state.mount) {
       return (
-        <div className="container__center">
+        <div className="container__center main">
           <Title
             title={this.state.title}
             array={this.arr}
@@ -98,6 +82,7 @@ class Form extends React.Component {
             />
             <button onClick={this.onClick}>CHANGE</button>
           </form>
+          <p> </p>
           <button
             onClick={this.state.mount ? this.unmountForm : this.mountForm}
           >
@@ -108,6 +93,7 @@ class Form extends React.Component {
     } else {
       return (
         <>
+          <p> </p>
           <div className="container__center">
             <button
               onClick={this.state.mount ? this.unmountForm : this.mountForm}
