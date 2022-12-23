@@ -11,11 +11,15 @@ class Form extends React.Component {
       mount: true,
     };
 
+    this.inputRef = React.createRef();
+
     this.onChange = this.onChange.bind(this);
     this.onClick = this.onClick.bind(this);
 
     this.mountForm = this.mountForm.bind(this);
     this.unmountForm = this.unmountForm.bind(this);
+
+    this.focus = this.focus.bind(this);
   }
 
   // Different types of props
@@ -38,9 +42,15 @@ class Form extends React.Component {
     }
   }
 
+  focus(e) {
+    e.preventDefault();
+    this.inputRef.current.focus();
+  }
+
   // Life cycle methods
   componentDidMount() {
     console.log('Component Did Mount ✅');
+    this.inputRef.current.focus();
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -75,12 +85,23 @@ class Form extends React.Component {
           />
           <form action="">
             <input
+              ref={this.inputRef}
               type="text"
               placeholder="type your title here..."
               value={this.state.userInput}
               onChange={this.onChange}
             />
-            <button onClick={this.onClick}>CHANGE</button>
+            <button
+              disabled={
+                this.state.userInput.toLowerCase().includes('react')
+                  ? true
+                  : false
+              }
+              onClick={this.onClick}
+            >
+              CHANGE
+            </button>
+            <button onClick={this.focus}>FOCUS</button>
           </form>
           <p> </p>
           <p>hide without losing state</p>
