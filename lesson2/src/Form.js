@@ -76,7 +76,7 @@ class Form extends React.Component {
 
     if (this.state.mount) {
       return (
-        <div className="container__center main">
+        <div className="container__center grey">
           <Title
             title={this.state.title}
             array={this.arr}
@@ -93,7 +93,8 @@ class Form extends React.Component {
             />
             <button
               disabled={
-                this.state.userInput.toLowerCase().includes('react')
+                this.state.userInput.toLowerCase().includes('react') ||
+                this.state.userInput.toLowerCase().includes('реакт')
                   ? true
                   : false
               }

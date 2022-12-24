@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Form from './Form';
+import List from './List';
 import ShouldUpdate from './ShouldUpdate';
 
 function App() {
@@ -12,11 +13,12 @@ function App() {
 
   return (
     <>
-      <button className="container__center" onClick={toggle}>
+      <button className="mount" onClick={toggle}>
         {mount ? 'UNMOUNT' : 'MOUNT'}
       </button>
       {mount ? <Form /> : ''}
       <ShouldUpdate />
+      <List />
     </>
   );
 }

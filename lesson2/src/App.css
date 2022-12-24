@@ -1,11 +1,27 @@
+body {
+  color: #222;
+  background-color: #eee;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 .container__center {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin: 0px auto;
+  padding: 20px 0;
 }
 
-.main {
+.grey {
   background: #cfcfcf;
+}
+
+.mount {
+  margin: 0px;
+  width: 100%;
 }

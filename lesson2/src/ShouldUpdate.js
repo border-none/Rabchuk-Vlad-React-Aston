@@ -34,6 +34,7 @@ class ShouldUpdate extends React.Component {
   render() {
     return (
       <div className="container__center">
+        shouldComponentUpdate?
         <h2>RENDER ONLY EVEN NUMBERS</h2>
         <h2>{this.state.count}</h2>
         <button onClick={this.countUp}>+2</button>
