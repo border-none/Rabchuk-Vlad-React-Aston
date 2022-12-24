@@ -92,6 +92,7 @@ class Form extends React.Component {
               onChange={this.onChange}
             />
             <button
+              className="margin-top"
               disabled={
                 this.state.userInput.toLowerCase().includes('react') ||
                 this.state.userInput.toLowerCase().includes('реакт')
@@ -104,8 +105,8 @@ class Form extends React.Component {
             </button>
             <button onClick={this.focus}>FOCUS</button>
           </form>
-          <p> </p>
-          <p>hide without losing state</p>
+
+          <p className="margin-top">hide without losing state</p>
           <button
             onClick={this.state.mount ? this.unmountForm : this.mountForm}
           >

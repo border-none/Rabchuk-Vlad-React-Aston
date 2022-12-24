@@ -8,7 +8,6 @@ function Title(props) {
       <button onClick={() => props.function(props.title)}>
         WHAT IS THE TITLE?
       </button>
-      <p> </p>
     </>
   );
 }
