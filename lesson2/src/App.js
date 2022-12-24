@@ -16,7 +16,7 @@ function App() {
       <button className="mount" onClick={toggle}>
         {mount ? 'UNMOUNT' : 'MOUNT'}
       </button>
-      {mount ? <Form /> : ''}
+      {mount && <Form />}
       <ShouldUpdate />
       <List />
     </>
