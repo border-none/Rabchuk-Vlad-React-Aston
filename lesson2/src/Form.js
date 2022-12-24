@@ -117,7 +117,6 @@ class Form extends React.Component {
     } else {
       return (
         <>
-          <p> </p>
           <div className="container__center">
             <button
               onClick={this.state.mount ? this.unmountForm : this.mountForm}
